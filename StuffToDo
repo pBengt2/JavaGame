@@ -1,0 +1,22 @@
+Need asap: Character design/Gameplay/Story
+
+Ready to implement:
+A setup GUI that outputs to gameSettings file, to choose keybindings/resolution/audio levels
+
+Should decide if doing save/loads/checkpoints
+
+Need, but have time:
+Audio (music, sound effects, voice acting (?))
+
+
+
+Fix Speed:
+A. Remove diagnoal movmeents
+B. angle/magnitude (sin/cos)
+C. 
+"If you are only doing 8 directional movement it's more efficient to just create a constant for the square root of 2 when the game starts, then divide the hspeed and vspeed by that constant when the two values are both not 0...
+The reason this works is due to Pythagorean Theorem and a little quirk about right triangles that have both legs the same length...the hypotenuse is always the value times the square root of 2...so therefore if you want C2 to not equal what 2A2 is (simplification of A2 + B2 since A and B are the same) but instead to equal A2, you just divide A by the square root of 2 first...then when you square it and multiply it by 2, it makes C2 equal A2
+So therefore if you divide hspeed and vspeed by the square root of 2 when moving diagonally, your diagonal movement vector will remain clamped to the speed you want it to be, and it doesn't require a dot product to be calculated each time either...it isn't a huge gain in CPU cycles, but it is a gain especially if you want multiple objects to follow the same behavior"
+"I use sqrt(2) to limit diagonal speed in my top down games.
+Basically, make a multiplier in your game that is 1 by default. If the player is moving diagonally, set the the multiplier to the square root of 2. Now, divide your movement speeds by the multiplier.
+Now the character moves the same speed in all 8 directions."
